@@ -1,5 +1,5 @@
- # Utiliza o Maven na versão 3.8.2 para executar o comando mvn clean install -X -DskipTests a seguir.
-FROM maven:3.8.2
+ # Utiliza o Maven na versão 3.8.7 para executar o comando mvn clean install -X -DskipTests a seguir.
+FROM maven:3.8.7
 
 # Copia todo o conteúdo do local onde está o arquivo Dockerfile (ou seja, na raiz do projeto, que por sua vez, contém
 # todos os arquivos e recursos do projeto) para a pasta raiz da imagem do container do Docker que será criado.
@@ -14,8 +14,8 @@ COPY . .
 # executável, para que o processo de geração do arquivo executável possa ser feito em menos tempo.
 RUN mvn clean install -X -DskipTests
 
-# Determina a versão do JDK do Java (21) que será utilizada para executar a aplicacaofinanceira.
-FROM openjdk:21
+# Determina a versão do JDK do Java (25) que será utilizada para executar a aplicacaofinanceira.
+FROM openjdk:25
 
 # Determina a porta onde a aplicacaofinanceira será exposta em um servidor.
 EXPOSE 8080
